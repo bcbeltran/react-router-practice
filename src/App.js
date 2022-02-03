@@ -5,6 +5,7 @@ import About from './Pages/About';
 import Profile from './Pages/Profile';
 import NotFound from './Pages/NotFound';
 import Post from './Pages/Post';
+import Login from './Pages/Login';
 import './App.css';
 import { useState } from 'react';
 
@@ -25,7 +26,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/post/:id" element={<Post loggedIn={login} />} />
           <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Profile login={login} />} />
+          <Route path="/profile/*" element={<Profile login={login} />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </div>
